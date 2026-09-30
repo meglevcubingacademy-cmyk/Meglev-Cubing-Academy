@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, MessageCircle, User, Building2 } from 'lucide-react'
+import { Phone, Mail, MapPin, MessageCircle, User, Building2, Instagram } from 'lucide-react'
 import Section from './Section.jsx'
 import Reveal from './Reveal.jsx'
 import { academy } from '../data/academyData.js'
@@ -78,6 +78,21 @@ export default function Contact() {
                     <p className="text-sm font-semibold">{p.phone}</p>
                   </div>
                 </a>
+
+                <a
+                  className={itemClass}
+                  href={p.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Founder Instagram @_itz_aseel_offil_"
+                >
+                  <Instagram size={18} className="text-blue shrink-0" />
+                  <div>
+                    <p className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Founder Instagram</p>
+                    <p className="text-sm font-semibold">@_itz_aseel_offil_</p>
+                  </div>
+                </a>
+
               </div>
             </div>
           </div>
@@ -138,6 +153,21 @@ export default function Contact() {
                     <p className="text-sm font-semibold">{b.phone}</p>
                   </div>
                 </a>
+
+                <a
+                  className={itemClass}
+                  href={academy.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Academy Instagram @meglevcubing"
+                >
+                  <Instagram size={18} className="text-yellow shrink-0" />
+                  <div>
+                    <p className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Academy Instagram</p>
+                    <p className="text-sm font-semibold">@meglevcubing</p>
+                  </div>
+                </a>
+
               </div>
             </div>
           </div>

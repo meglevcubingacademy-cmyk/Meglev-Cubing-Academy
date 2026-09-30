@@ -28,6 +28,48 @@ body {
   overflow-x: hidden;
 }
 
+.scroll-solving-cube {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.18;
+  pointer-events: none;
+  animation: cube-background-idle 10s ease-in-out infinite;
+}
+
+.scroll-solving-cube.is-scrolling {
+  animation-play-state: paused;
+}
+
+.scroll-solving-cube canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 700px) {
+  .scroll-solving-cube {
+    opacity: 0.08;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-solving-cube {
+    opacity: 0.06;
+    animation: none;
+  }
+}
+
+@keyframes cube-background-idle {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -1.5px;
+  }
+}
+
 h1, h2, h3 {
   font-family: var(--font-display);
 }
@@ -47,12 +89,16 @@ h1, h2, h3 {
   padding: 0.8rem 1.5rem;
   border-radius: 0.75rem;
   font-weight: 600;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.24s, background-color 0.24s, border-color 0.24s;
   cursor: pointer;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .btn-yellow {
@@ -76,6 +122,47 @@ h1, h2, h3 {
   background: rgba(47, 107, 255, 0.15);
 }
 
+/* One-time hero entrance. */
+.hero-enter {
+  opacity: 0;
+  animation: hero-enter 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-heading {
+  animation-delay: 80ms;
+}
+
+.hero-tagline {
+  animation-delay: 160ms;
+}
+
+.hero-slogan {
+  animation-delay: 220ms;
+}
+
+.hero-description {
+  animation-delay: 280ms;
+}
+
+.hero-cta-first {
+  animation-delay: 360ms;
+}
+
+.hero-cta-second {
+  animation-delay: 440ms;
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
 /* 3D Scene and Cube Animations */
 .scene {
   perspective: 1000px;
@@ -84,16 +171,7 @@ h1, h2, h3 {
 .cube {
   position: relative;
   transform-style: preserve-3d;
-  animation: spin 18s linear infinite;
-  transition: transform 0.3s ease;
-}
-
-.cube-sm {
-  animation-duration: 14s;
-}
-
-.cube-hero {
-  animation-duration: 22s;
+  transform: rotateX(-22deg) rotateY(-28deg);
 }
 
 .face {
@@ -104,13 +182,11 @@ h1, h2, h3 {
   backface-visibility: visible;
 }
 
-@keyframes spin {
-  from {
-    transform: rotateX(-22deg) rotateY(0deg);
-  }
-  to {
-    transform: rotateX(-22deg) rotateY(360deg);
-  }
+.interactive-cube-slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Custom Non-Cube Puzzle Animations */
@@ -208,9 +284,6 @@ h1, h2, h3 {
 
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  .cube,
-  .cube-sm,
-  .cube-hero,
   .puzzle-anim-pyraminx,
   .puzzle-anim-axis,
   .puzzle-anim-megaminx,
@@ -218,8 +291,9 @@ h1, h2, h3 {
   .puzzle-anim-square1,
   .puzzle-anim-skewb {
     animation: none !important;
-    transform: rotateX(-20deg) rotateY(30deg) !important;
+    transform: none !important;
   }
+  .hero-enter,
   html {
     scroll-behavior: auto !important;
   }

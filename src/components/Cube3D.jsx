@@ -37,7 +37,7 @@ const SCRAMBLE_SEEDS = [
   [5, 1, 3, 4, 5, 2, 0, 1, 4], // Face 5
 ]
 
-export default function Cube3D({ n = 3, size = 180, scrambled = false, hero = false, small = false }) {
+export default function Cube3D({ n = 3, size = 180, scrambled = false, small = false, shadow = true }) {
   const gap = Math.max(1.5, Math.round(size / 45))
   const half = size / 2
   const borderRadius = Math.max(2, Math.round(size / 38))
@@ -47,23 +47,12 @@ export default function Cube3D({ n = 3, size = 180, scrambled = false, hero = fa
       return COLOR_LIST[faceIndex % 6]
     }
 
-    // For 3x3 hero cube, guarantee the front face center sticker is white
-    const totalStickers = n * n
-    const centerIndex = Math.floor(totalStickers / 2)
-    if (hero && faceIndex === 0 && stickerIndex === centerIndex) {
-      return REAL_COLORS.white
-    }
-
     if (n === 3) {
-      const colorIdx = SCRAMBLE_SEEDS[faceIndex % 6][stickerIndex % 9]
-      // Ensure front center is always white if hero
-      if (hero && faceIndex === 0 && stickerIndex === 4) return REAL_COLORS.white
-      return COLOR_LIST[colorIdx]
+      return COLOR_LIST[SCRAMBLE_SEEDS[faceIndex % 6][stickerIndex % 9]]
     }
 
     // Deterministic pseudo-scramble for 2x2, 4x4, 5x5, 6x6, 7x7
     const hash = (faceIndex * 19 + stickerIndex * 7 + (stickerIndex % 3) * 11 + Math.floor(stickerIndex / n) * 13) % 6
-    if (hero && faceIndex === 0 && stickerIndex === centerIndex) return REAL_COLORS.white
     return COLOR_LIST[hash]
   }
 
@@ -73,12 +62,12 @@ export default function Cube3D({ n = 3, size = 180, scrambled = false, hero = fa
       style={{
         width: size,
         height: size,
-        filter: hero ? 'drop-shadow(0 25px 35px rgba(0,0,0,0.6))' : 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))',
+        filter: shadow ? 'drop-shadow(0 10px 18px rgba(0,0,0,0.45))' : 'none',
       }}
       aria-hidden="true"
     >
       <div
-        className={`cube ${small ? 'cube-sm' : ''} ${hero ? 'cube-hero' : ''}`}
+        className={`cube ${small ? 'cube-sm' : ''}`}
         style={{ width: size, height: size }}
       >
         {FACES.map(([rot, f]) => (

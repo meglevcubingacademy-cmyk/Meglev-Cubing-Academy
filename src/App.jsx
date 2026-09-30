@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import { lazy, Suspense, useState, useEffect } from 'react'
 import Home from './pages/Home.jsx'
 import JoinClass from './pages/JoinClass.jsx'
+
+const ScrollSolvingCube = lazy(() => import('./components/ScrollSolvingCube.jsx'))
 
 function getIsJoinClassRoute() {
     const path = window.location.pathname.toLowerCase()
@@ -47,9 +49,18 @@ export default function App() {
         }
     }
 
-    if (isJoinClass) {
-        return <JoinClass onNavigate={navigate} />
-    }
-
-    return <Home onNavigate={navigate} />
+    return (
+        <>
+            <Suspense fallback={null}>
+                <ScrollSolvingCube />
+            </Suspense>
+            <div className="relative z-[1]">
+                {isJoinClass ? (
+                    <JoinClass onNavigate={navigate} />
+                ) : (
+                    <Home onNavigate={navigate} />
+                )}
+            </div>
+        </>
+    )
 }

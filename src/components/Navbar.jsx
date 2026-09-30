@@ -1,9 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { academy, nav } from '../data/academyData.js'
 
 export default function Navbar({ onNavigate }) {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const updateScrollState = () => setScrolled(window.scrollY > 12)
+    updateScrollState()
+    window.addEventListener('scroll', updateScrollState, { passive: true })
+    return () => window.removeEventListener('scroll', updateScrollState)
+  }, [])
 
   const handleNavClick = (e, hash) => {
     if (onNavigate) {
@@ -13,7 +21,11 @@ export default function Navbar({ onNavigate }) {
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-md">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 backdrop-blur-md transition-[background-color,box-shadow] duration-300 ease-out ${
+        scrolled ? 'bg-ink/95 shadow-lg shadow-black/20' : 'bg-ink/85'
+      }`}
+    >
       <nav
         className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5"
         aria-label="Main Navigation"
