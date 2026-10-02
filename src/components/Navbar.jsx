@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { ExternalLink, Menu, X } from 'lucide-react'
 import { academy, nav } from '../data/academyData.js'
 
 export default function Navbar({ onNavigate }) {
@@ -53,6 +53,16 @@ export default function Navbar({ onNavigate }) {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={academy.chessUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-sm font-medium text-slate-300 transition hover:text-yellow"
+            >
+              Chess Academy <ExternalLink size={14} aria-hidden="true" />
+            </a>
+          </li>
         </ul>
 
         <div className="flex items-center gap-3">
@@ -92,6 +102,16 @@ export default function Navbar({ onNavigate }) {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={academy.chessUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 py-3 text-base font-medium text-slate-200 hover:text-yellow"
+              >
+                Chess Academy <ExternalLink size={16} aria-hidden="true" />
+              </a>
+            </li>
           </ul>
           <div className="mt-4 pt-4 border-t border-white/10">
             <a

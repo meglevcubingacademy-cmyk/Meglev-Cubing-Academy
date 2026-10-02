@@ -7,6 +7,7 @@ export const academy = {
   description: 'Learn, practice and master twisty puzzles with structured cubing classes designed for beginners, intermediate solvers and advanced learners.',
   about: 'Meglev Cubing Academy teaches Rubik’s Cube and twisty-puzzle solving from beginner level through intermediate and advanced levels, with daily, weekly and online classes for students and cubing enthusiasts.',
   formUrl: 'https://forms.gle/Rtw6C7FaCAkA6Qmp8', // Official Google Form registration link
+  chessUrl: 'https://ks-chess-academy.vercel.app/',
   instagramUrl: 'https://www.instagram.com/meglevcubing/',
   personal: {
     name: 'Mohammed Aseel M (Personal)',

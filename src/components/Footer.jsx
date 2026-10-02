@@ -27,6 +27,16 @@ export default function Footer({ onNavigate }) {
             </a>
           </li>
         ))}
+        <li>
+          <a
+            href={academy.chessUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 hover:text-yellow transition-colors"
+          >
+            Chess Academy
+          </a>
+        </li>
       </ul>
 
       <p className="mt-8 text-xs text-slate-500">
