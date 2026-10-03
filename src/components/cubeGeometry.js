@@ -123,7 +123,7 @@ export function createCubelets(scene, options = {}) {
             context.textAlign = 'center'
             context.textBaseline = 'middle'
             context.font = '800 190px Arial, sans-serif'
-            context.fillText('MC', canvas.width / 2, canvas.height / 2 + 4)
+            context.fillText('ML', canvas.width / 2, canvas.height / 2 + 4)
 
             logoTexture = new THREE.CanvasTexture(canvas)
             logoTexture.colorSpace = THREE.SRGBColorSpace
