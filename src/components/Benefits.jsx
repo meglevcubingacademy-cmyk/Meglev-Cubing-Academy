@@ -1,7 +1,7 @@
 import Section from './Section.jsx'
 import Reveal from './Reveal.jsx'
 import { benefits } from '../data/academyData.js'
-const accents = ['border-t-blue', 'border-t-green', 'border-t-yellow', 'border-t-orange']
+const accents = ['border-t-blue', 'border-t-cyan', 'border-t-yellow', 'border-t-blue']
 export default function Benefits() {
   return (
     <Section title="Why Meglev?">

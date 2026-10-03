@@ -20,11 +20,11 @@ export default function Hero({ onNavigate }) {
     >
       {/* Background radial glow */}
       <div
-        className="absolute -left-20 top-40 h-80 w-80 rounded-full bg-blue/20 blur-3xl pointer-events-none"
+        className="absolute -left-20 top-40 h-80 w-80 rounded-full bg-blue/10 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
       <div
-        className="absolute right-0 top-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-yellow/10 blur-3xl pointer-events-none"
+        className="absolute right-0 top-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-cyan/5 blur-3xl pointer-events-none"
         aria-hidden="true"
       />
 
@@ -36,7 +36,7 @@ export default function Hero({ onNavigate }) {
         <p className="hero-enter hero-tagline mt-4 font-display text-2xl font-bold text-yellow sm:text-3xl">
           “{academy.tagline}”
         </p>
-        <p className="hero-enter hero-slogan mt-2 text-lg font-semibold text-orange sm:text-xl">
+        <p className="hero-enter hero-slogan mt-2 text-lg font-semibold text-cyan sm:text-xl">
           “{academy.slogan}”
         </p>
         <p className="hero-enter hero-description mt-5 max-w-lg text-slate-300 text-base sm:text-lg leading-relaxed mx-auto md:mx-0">

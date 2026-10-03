@@ -59,9 +59,9 @@ export const levels = [
   {
     level: 'BEGINNER',
     tag: 'Foundation',
-    accent: 'green',
-    borderClass: 'border-green/40 hover:border-green text-green',
-    badgeClass: 'bg-green/10 text-green border-green/30',
+    accent: 'blue',
+    borderClass: 'border-blue/40 hover:border-blue text-blue',
+    badgeClass: 'bg-blue/10 text-blue border-blue/30',
     description: 'Build strong fundamentals and solve your first cubes with confidence.',
     slogans: ['Start simple. Build confidence. Keep solving.'],
     highlights: ['Cube notation & grip', 'Layer-by-layer method', 'First complete solve'],
@@ -83,9 +83,9 @@ export const levels = [
   {
     level: 'ADVANCED',
     tag: 'Mastery',
-    accent: 'orange',
-    borderClass: 'border-orange/40 hover:border-orange text-orange',
-    badgeClass: 'bg-orange/10 text-orange border-orange/30',
+    accent: 'cyan',
+    borderClass: 'border-cyan/40 hover:border-cyan text-cyan',
+    badgeClass: 'bg-cyan/10 text-cyan border-cyan/30',
     description: 'Develop advanced solving skills, efficiency and competition-focused techniques.',
     slogans: [
       'Master advanced techniques.',

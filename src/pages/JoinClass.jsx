@@ -60,29 +60,29 @@ export default function JoinClass({ onNavigate }) {
               href={`https://wa.me/${academy.business.whatsapp}?text=${encodeURIComponent('Hello MEGLEV Cubing Academy, I would like to make an enquiry regarding joining a class.')}`}
               target="_blank"
               rel="noreferrer"
-              className="btn btn-line border-green/40 text-green hover:bg-green/10 text-sm"
+              className="btn btn-line text-sm"
             >
               <MessageCircle size={16} /> Enquire on WhatsApp
             </a>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
-            <div className="p-4 rounded-lg bg-black/20 border border-white/5">
+          <div className="mt-12 pt-8 border-t border-border grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+            <div className="p-4 rounded-lg bg-panel border border-border">
               <p className="text-xs text-yellow font-semibold uppercase tracking-wider">Direct Enquiries</p>
               <p className="mt-1 text-sm text-slate-200 font-medium">Daily & Weekly Batches</p>
-              <a href={`tel:+91${academy.business.phone}`} className="mt-2 inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-yellow">
+              <a href={`tel:+91${academy.business.phone}`} className="mt-2 inline-flex items-center gap-1.5 text-xs text-blue hover:text-slate-100">
                 <Phone size={12} /> {academy.business.phone}
               </a>
             </div>
-            <div className="p-4 rounded-lg bg-black/20 border border-white/5">
+            <div className="p-4 rounded-lg bg-panel border border-border">
               <p className="text-xs text-blue font-semibold uppercase tracking-wider">Online Learning</p>
               <p className="mt-1 text-sm text-slate-200 font-medium">Global 1-on-1 Sessions</p>
-              <a href={`mailto:${academy.business.email}`} className="mt-2 inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-blue">
+              <a href={`mailto:${academy.business.email}`} className="mt-2 inline-flex items-center gap-1.5 text-xs text-blue hover:text-slate-100">
                 <Mail size={12} /> {academy.business.email}
               </a>
             </div>
-            <div className="p-4 rounded-lg bg-black/20 border border-white/5">
-              <p className="text-xs text-green font-semibold uppercase tracking-wider">Location</p>
+            <div className="p-4 rounded-lg bg-panel border border-border">
+              <p className="text-xs text-cyan font-semibold uppercase tracking-wider">Location</p>
               <p className="mt-1 text-sm text-slate-200 font-medium">{academy.location}</p>
               <p className="mt-2 text-xs text-slate-400">Thoothukudi & Online</p>
             </div>

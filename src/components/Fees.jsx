@@ -22,7 +22,7 @@ export default function Fees() {
             href={`https://wa.me/${b.whatsapp}?text=${feeWaMessage}`}
             target="_blank"
             rel="noreferrer"
-            className="btn bg-[#25D366] text-white hover:bg-[#20bd5a] font-bold shadow-lg"
+            className="btn btn-yellow font-bold"
           >
             <MessageCircle size={18} />
             WhatsApp Us

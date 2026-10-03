@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { ExternalLink, Menu, X } from 'lucide-react'
+import { Box, ExternalLink, Menu, X } from 'lucide-react'
 import { academy, nav } from '../data/academyData.js'
+import BrandIcon from './BrandIcon.jsx'
 
 export default function Navbar({ onNavigate }) {
   const [open, setOpen] = useState(false)
@@ -22,8 +23,8 @@ export default function Navbar({ onNavigate }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 backdrop-blur-md transition-[background-color,box-shadow] duration-300 ease-out ${
-        scrolled ? 'bg-ink/95 shadow-lg shadow-black/20' : 'bg-ink/85'
+      className={`fixed inset-x-0 top-0 z-50 border-b border-border backdrop-blur-md transition-[background-color,box-shadow] duration-300 ease-out ${
+        scrolled ? 'bg-ink/95 shadow-lg shadow-black/20' : 'bg-ink/90'
       }`}
     >
       <nav
@@ -33,11 +34,14 @@ export default function Navbar({ onNavigate }) {
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, '#home')}
-          className="font-display text-lg font-extrabold tracking-tight"
+          className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight"
         >
-          MEG<span className="text-yellow">LEV</span>{' '}
-          <span className="hidden text-sm font-semibold text-slate-400 sm:inline">
-            Cubing Academy
+          <BrandIcon />
+          <span>
+            MEG<span className="text-yellow">LEV</span>{' '}
+            <span className="hidden text-sm font-semibold text-slate-400 sm:inline">
+              Cubing Academy
+            </span>
           </span>
         </a>
 
@@ -47,7 +51,7 @@ export default function Navbar({ onNavigate }) {
               <a
                 href={h}
                 onClick={(e) => handleNavClick(e, h)}
-                className="text-sm font-medium text-slate-300 transition hover:text-yellow"
+                className="text-sm font-medium text-slate-300 transition hover:text-slate-100"
               >
                 {l}
               </a>
@@ -58,9 +62,11 @@ export default function Navbar({ onNavigate }) {
               href={academy.chessUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-sm font-medium text-slate-300 transition hover:text-yellow"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-yellow transition hover:border-yellow/50 hover:bg-yellow/5 hover:text-yellow"
             >
-              Chess Academy <ExternalLink size={14} aria-hidden="true" />
+              <Box size={16} aria-hidden="true" />
+              Chess Academy
+              <ExternalLink size={14} aria-hidden="true" />
             </a>
           </li>
         </ul>
@@ -107,9 +113,11 @@ export default function Navbar({ onNavigate }) {
                 href={academy.chessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 py-3 text-base font-medium text-slate-200 hover:text-yellow"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-3 text-base font-semibold text-yellow transition hover:border-yellow/50 hover:bg-yellow/5"
               >
-                Chess Academy <ExternalLink size={16} aria-hidden="true" />
+                <Box size={18} aria-hidden="true" />
+                Chess Academy
+                <ExternalLink size={16} aria-hidden="true" />
               </a>
             </li>
           </ul>

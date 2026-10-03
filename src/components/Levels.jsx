@@ -4,9 +4,30 @@ import Reveal from './Reveal.jsx'
 import { levels } from '../data/academyData.js'
 
 const ICONS = {
-  green: Award,
+  blue: Award,
   yellow: Zap,
-  orange: Flame,
+  cyan: Flame,
+}
+
+const accents = {
+  blue: {
+    border: 'border-t-blue hover:border-blue/80 hover:shadow-blue/10',
+    title: 'text-blue',
+    quote: 'text-blue/90',
+    icon: 'text-blue',
+  },
+  yellow: {
+    border: 'border-t-yellow hover:border-yellow/80 hover:shadow-yellow/10',
+    title: 'text-yellow',
+    quote: 'text-yellow/90',
+    icon: 'text-yellow',
+  },
+  cyan: {
+    border: 'border-t-cyan hover:border-cyan/80 hover:shadow-cyan/10',
+    title: 'text-cyan',
+    quote: 'text-cyan/90',
+    icon: 'text-cyan',
+  },
 }
 
 export default function Levels() {
@@ -19,16 +40,11 @@ export default function Levels() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3 items-stretch">
         {levels.map((lvl, i) => {
           const IconComponent = ICONS[lvl.accent] || Award
+          const accent = accents[lvl.accent] || accents.blue
           return (
             <Reveal key={lvl.level} delay={i * 120} className="h-full">
               <div
-                className={`glass group relative flex h-full flex-col justify-between border-t-4 p-7 sm:p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl ${
-                  lvl.accent === 'green'
-                    ? 'border-t-green hover:border-green/80 hover:shadow-green/10'
-                    : lvl.accent === 'yellow'
-                    ? 'border-t-yellow hover:border-yellow/80 hover:shadow-yellow/10'
-                    : 'border-t-orange hover:border-orange/80 hover:shadow-orange/10'
-                }`}
+                className={`glass group relative flex h-full flex-col justify-between border-t-4 p-7 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${accent.border}`}
               >
                 <div>
                   {/* Top Level Header & Badge */}
@@ -43,13 +59,7 @@ export default function Levels() {
                   </div>
 
                   <h3
-                    className={`mt-4 font-display text-2xl font-extrabold tracking-tight ${
-                      lvl.accent === 'green'
-                        ? 'text-green'
-                        : lvl.accent === 'yellow'
-                        ? 'text-yellow'
-                        : 'text-orange'
-                    }`}
+                    className="mt-4 font-display text-2xl font-extrabold tracking-tight text-slate-100"
                   >
                     {lvl.level}
                   </h3>
@@ -63,13 +73,7 @@ export default function Levels() {
                     {lvl.slogans.map((slogan, sIdx) => (
                       <p
                         key={sIdx}
-                        className={`text-xs font-semibold italic ${
-                          lvl.accent === 'green'
-                            ? 'text-green/90'
-                            : lvl.accent === 'yellow'
-                            ? 'text-yellow/90'
-                            : 'text-orange/90'
-                        }`}
+                        className={`text-xs font-semibold italic ${accent.quote}`}
                       >
                         “{slogan}”
                       </p>
@@ -87,13 +91,7 @@ export default function Levels() {
                       <li key={hIdx} className="flex items-center gap-2 text-xs text-slate-300">
                         <CheckCircle2
                           size={14}
-                          className={`shrink-0 ${
-                            lvl.accent === 'green'
-                              ? 'text-green'
-                              : lvl.accent === 'yellow'
-                              ? 'text-yellow'
-                              : 'text-orange'
-                          }`}
+                          className={`shrink-0 ${accent.icon}`}
                         />
                         <span>{h}</span>
                       </li>

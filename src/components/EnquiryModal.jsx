@@ -78,7 +78,7 @@ export default function EnquiryModal({ cls, onClose }) {
             target="_blank"
             rel="noreferrer"
             onClick={onClose}
-            className="btn w-full justify-center bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg shadow-green/20 font-bold"
+            className="btn btn-yellow w-full justify-center font-bold"
           >
             <MessageCircle size={20} />
             Enquire via WhatsApp
@@ -87,7 +87,7 @@ export default function EnquiryModal({ cls, onClose }) {
           <a
             href={emailUrl}
             onClick={onClose}
-            className="btn w-full justify-center btn-line border-blue/40 text-blue hover:bg-blue/15 font-semibold"
+            className="btn btn-line w-full justify-center font-semibold"
           >
             <Mail size={20} />
             Enquire via Email

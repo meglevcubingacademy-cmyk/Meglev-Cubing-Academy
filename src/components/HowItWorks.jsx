@@ -12,7 +12,7 @@ export default function HowItWorks() {
             <li key={t}>
               <Reveal delay={i * 80}>
                 <div className="glass h-full p-5 text-center">
-                  <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue font-bold">{i + 1}</span>
+                  <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-blue font-bold text-white">{i + 1}</span>
                   <Icon className="mx-auto mt-4 text-yellow" />
                   <h3 className="mt-3 font-semibold">{t}</h3>
                 </div>

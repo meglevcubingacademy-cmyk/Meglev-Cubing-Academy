@@ -4,7 +4,7 @@ import Reveal from './Reveal.jsx'
 import { academy } from '../data/academyData.js'
 
 const itemClass =
-  'flex items-center gap-3.5 p-3.5 rounded-xl bg-white/[0.03] border border-white/5 text-slate-200 transition-all duration-200 hover:bg-white/[0.08] hover:border-yellow/40 hover:text-yellow hover:translate-x-1'
+  'flex items-center gap-3.5 p-3.5 rounded-xl bg-panel/70 border border-border text-slate-100 transition-all duration-200 hover:bg-blue/10 hover:border-blue/60 hover:text-blue hover:translate-x-1'
 
 export default function Contact() {
   const { personal: p, business: b } = academy
@@ -72,7 +72,7 @@ export default function Contact() {
                   rel="noreferrer"
                   aria-label={`WhatsApp ${p.name}`}
                 >
-                  <MessageCircle size={18} className="text-[#25D366] shrink-0" />
+                  <MessageCircle size={18} className="text-yellow shrink-0" />
                   <div>
                     <p className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">WhatsApp</p>
                     <p className="text-sm font-semibold">{p.phone}</p>
@@ -147,7 +147,7 @@ export default function Contact() {
                   rel="noreferrer"
                   aria-label="WhatsApp Business Support"
                 >
-                  <MessageCircle size={18} className="text-[#25D366] shrink-0" />
+                  <MessageCircle size={18} className="text-yellow shrink-0" />
                   <div>
                     <p className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">WhatsApp</p>
                     <p className="text-sm font-semibold">{b.phone}</p>
@@ -176,7 +176,7 @@ export default function Contact() {
 
       {/* Academy Location */}
       <div className="mt-8 flex items-center justify-center gap-2 text-sm text-slate-300">
-        <MapPin size={18} className="text-red shrink-0" />
+        <MapPin size={18} className="text-yellow shrink-0" />
         <span>{academy.location}</span>
       </div>
     </Section>

@@ -1,13 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #060b1a;
-  --color-panel: #0d1530;
-  --color-blue: #2f6bff;
-  --color-yellow: #ffd400;
-  --color-orange: #ff7a1a;
-  --color-red: #e5262b;
-  --color-green: #1fbf5b;
+  --color-ink: #070b18;
+  --color-panel: #0d1326;
+  --color-card: #111a32;
+  --color-border: #263354;
+  --color-blue: #4169ff;
+  --color-cyan: #22d3ee;
+  --color-yellow: #ffd83d;
+  --color-slate-100: #f5f7ff;
+  --color-slate-200: #dbe2f2;
+  --color-slate-300: #a8b2c8;
+  --color-slate-400: #a8b2c8;
+  --color-slate-500: #7f8ba5;
   --font-display: 'Sora', system-ui, sans-serif;
   --font-sans: 'Rubik', system-ui, sans-serif;
 }
@@ -18,13 +23,14 @@ html {
 }
 
 body {
-  background: #060b1a;
-  color: #e8ecf8;
+  background-color: #070b18;
+  color: #f5f7ff;
   font-family: var(--font-sans);
   background-image:
-    linear-gradient(rgba(47, 107, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(47, 107, 255, 0.05) 1px, transparent 1px);
-  background-size: 48px 48px;
+    radial-gradient(ellipse at 78% 12%, rgba(65, 105, 255, 0.08), transparent 36rem),
+    linear-gradient(rgba(22, 33, 61, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 33, 61, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
   overflow-x: hidden;
 }
 
@@ -75,11 +81,17 @@ h1, h2, h3 {
 }
 
 .glass {
-  background: rgba(13, 21, 48, 0.65);
+  background: rgba(17, 26, 50, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #263354;
   border-radius: 1rem;
+  transition: border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
+}
+
+.glass:hover {
+  border-color: rgba(65, 105, 255, 0.72);
+  box-shadow: 0 0 25px rgba(65, 105, 255, 0.12);
 }
 
 .btn {
@@ -103,23 +115,25 @@ h1, h2, h3 {
 
 .btn-yellow {
   background: var(--color-yellow);
-  color: #0d1530;
-  box-shadow: 0 0 0 0 rgba(255, 212, 0, 0.5);
+  color: var(--color-ink);
+  box-shadow: 0 0 0 0 rgba(255, 216, 61, 0.28);
 }
 
 .btn-yellow:hover {
-  box-shadow: 0 8px 24px rgba(255, 212, 0, 0.35);
+  background: #ffe36b;
+  box-shadow: 0 8px 24px rgba(255, 216, 61, 0.22);
 }
 
 .btn-line {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.03);
-  color: #e8ecf8;
+  border: 1px solid var(--color-blue);
+  background: transparent;
+  color: #f5f7ff;
 }
 
 .btn-line:hover {
   border-color: var(--color-blue);
-  background: rgba(47, 107, 255, 0.15);
+  background: rgba(65, 105, 255, 0.12);
+  box-shadow: 0 0 18px rgba(65, 105, 255, 0.14);
 }
 
 /* One-time hero entrance. */
@@ -180,6 +194,27 @@ h1, h2, h3 {
   background: #0b0e17;
   border-radius: 6px;
   backface-visibility: visible;
+}
+
+input,
+textarea,
+select {
+  background-color: var(--color-panel);
+  border-color: var(--color-border);
+  color: #f5f7ff;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a8b2c8;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(65, 105, 255, 0.16);
+  outline: none;
 }
 
 .interactive-cube-slot {
@@ -278,7 +313,7 @@ h1, h2, h3 {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-yellow);
+  outline: 3px solid var(--color-blue);
   outline-offset: 3px;
 }
 

@@ -15,7 +15,7 @@ export default function Cubes() {
         {cubes.map((c, i) => (
           <li key={c.name} className="h-full">
             <Reveal delay={(i % 4) * 60} className="h-full">
-              <div className="glass group relative flex flex-col items-center justify-between gap-4 p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:border-blue/70 hover:shadow-2xl hover:shadow-blue/15 h-full">
+              <div className="glass group relative flex flex-col items-center justify-between gap-4 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue/70 hover:shadow-xl hover:shadow-blue/10 h-full">
                 {/* Puzzle Illustration Area */}
                 <div className="flex h-32 w-full items-center justify-center pt-2">
                   {c.n ? (
@@ -27,7 +27,7 @@ export default function Cubes() {
 
                 {/* Puzzle Info */}
                 <div className="mt-2 w-full border-t border-white/10 pt-3.5">
-                  <h3 className="font-display text-lg font-bold text-slate-100 group-hover:text-yellow transition-colors">
+                  <h3 className="font-display text-lg font-bold text-slate-100 group-hover:text-blue transition-colors">
                     {c.name}
                   </h3>
                   <span className="mt-1 inline-block text-xs font-medium text-slate-400">
