@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Box, ExternalLink, Menu, X } from 'lucide-react'
 import { academy, nav } from '../data/academyData.js'
-import BrandIcon from './BrandIcon.jsx'
+import MeglevLogo from './MeglevLogo.jsx'
 
 export default function Navbar({ onNavigate }) {
   const [open, setOpen] = useState(false)
@@ -28,62 +28,58 @@ export default function Navbar({ onNavigate }) {
       }`}
     >
       <nav
-        className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5"
+        className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-3.5"
         aria-label="Main Navigation"
       >
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, '#home')}
-          className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight"
+          className="flex shrink-0 items-center"
+          aria-label="MEGLEV Cubing Academy home"
         >
-          <BrandIcon />
-          <span>
-            MEG<span className="text-yellow">LEV</span>{' '}
-            <span className="hidden text-sm font-semibold text-slate-400 sm:inline">
-              Cubing Academy
-            </span>
-          </span>
+          <MeglevLogo size={38} showText />
         </a>
 
-        <ul className="hidden gap-7 md:flex">
+        {/* Navigation links for Desktop */}
+        <ul className="hidden lg:flex items-center gap-6">
           {nav.map(([l, h]) => (
             <li key={h}>
               <a
                 href={h}
                 onClick={(e) => handleNavClick(e, h)}
-                className="text-sm font-medium text-slate-300 transition hover:text-slate-100"
+                className="text-sm font-medium text-slate-300 transition hover:text-yellow"
               >
                 {l}
               </a>
             </li>
           ))}
-          <li>
-            <a
-              href={academy.chessUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-yellow transition hover:border-yellow/50 hover:bg-yellow/5 hover:text-yellow"
-            >
-              <Box size={16} aria-hidden="true" />
-              Chess Academy
-              <ExternalLink size={14} aria-hidden="true" />
-            </a>
-          </li>
         </ul>
 
-        <div className="flex items-center gap-3">
+        {/* Auto-aligned Action Buttons (Displayed on ALL displays) */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <a
+            href={academy.chessUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-border bg-[#0d1428] px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-yellow transition hover:border-yellow/50 hover:bg-yellow/10 hover:text-yellow whitespace-nowrap shadow-sm"
+          >
+            <Box size={14} className="shrink-0 sm:w-4 sm:h-4" aria-hidden="true" />
+            <span>Chess Academy</span>
+            <ExternalLink size={12} className="shrink-0 sm:w-3.5 sm:h-3.5" aria-hidden="true" />
+          </a>
+
           <a
             href={academy.formUrl}
             target="_blank"
             rel="noreferrer"
-            className="btn btn-yellow hidden !py-2 text-xs md:inline-flex"
+            className="inline-flex items-center justify-center rounded-full bg-yellow px-3.5 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-bold text-ink transition hover:bg-[#ffe36b] shadow-md shadow-yellow/15 whitespace-nowrap"
           >
             Register Now
           </a>
 
           <button
             type="button"
-            className="p-2 text-slate-200 hover:text-yellow md:hidden"
+            className="p-1.5 text-slate-200 hover:text-yellow lg:hidden"
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen(!open)}
@@ -93,9 +89,9 @@ export default function Navbar({ onNavigate }) {
         </div>
       </nav>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer for Navigation Links */}
       {open && (
-        <div className="border-t border-white/10 bg-ink/95 px-5 pb-6 pt-2 backdrop-blur-lg md:hidden">
+        <div className="border-t border-white/10 bg-ink/95 px-5 pb-6 pt-2 backdrop-blur-lg lg:hidden">
           <ul className="space-y-1">
             {nav.map(([l, h]) => (
               <li key={h}>
@@ -108,30 +104,7 @@ export default function Navbar({ onNavigate }) {
                 </a>
               </li>
             ))}
-            <li>
-              <a
-                href={academy.chessUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-3 text-base font-semibold text-yellow transition hover:border-yellow/50 hover:bg-yellow/5"
-              >
-                <Box size={18} aria-hidden="true" />
-                Chess Academy
-                <ExternalLink size={16} aria-hidden="true" />
-              </a>
-            </li>
           </ul>
-          <div className="mt-4 pt-4 border-t border-white/10">
-            <a
-              href={academy.formUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setOpen(false)}
-              className="btn btn-yellow w-full justify-center text-sm font-bold"
-            >
-              Register Now
-            </a>
-          </div>
         </div>
       )}
     </header>

@@ -6,10 +6,10 @@ import { academy } from '../data/academyData.js'
 
 export default function JoinClass({ onNavigate }) {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between bg-ink text-slate-100">
       <Navbar onNavigate={onNavigate} />
-      <main className="flex-1 mx-auto max-w-4xl px-5 pt-32 pb-20 w-full flex flex-col justify-center">
-        <div className="glass relative overflow-hidden p-8 sm:p-12 text-center border-blue/40 shadow-2xl">
+      <main className="flex-1 mx-auto max-w-4xl px-5 pt-32 pb-20 w-full flex flex-col justify-center bg-ink">
+        <div className="glass relative overflow-hidden p-8 sm:p-12 text-center border-blue/40 shadow-2xl bg-ink/90">
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue/15 blur-3xl pointer-events-none" />
           <div className="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-yellow/10 blur-3xl pointer-events-none" />
 

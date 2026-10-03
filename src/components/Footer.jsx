@@ -1,5 +1,5 @@
 import { ArrowUp, ExternalLink, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
-import BrandIcon from './BrandIcon.jsx'
+import MeglevLogo from './MeglevLogo.jsx'
 import { academy, nav } from '../data/academyData.js'
 
 export default function Footer({ onNavigate }) {
@@ -14,29 +14,26 @@ export default function Footer({ onNavigate }) {
   )}`
 
   return (
-    <footer className="border-t border-border bg-[#050812] px-5 py-14">
+    <footer className="site-footer border-t border-border px-5 py-14">
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr] lg:gap-16">
         <div>
           <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="inline-flex items-center gap-3">
-            <BrandIcon />
-            <span className="font-display text-xl font-extrabold tracking-tight text-slate-100">
-              MEG<span className="text-yellow">LEV</span> Cubing Academy
-            </span>
+            <MeglevLogo size={40} showText variant="primary" />
           </a>
-          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-yellow">
-            {academy.tagline}
+          <p className="mt-4 text-xs font-bold uppercase tracking-[0.18em] text-yellow">
+            LEARN. SOLVE. MASTER.
           </p>
-          <p className="mt-4 max-w-md text-sm leading-6 text-slate-300">
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-300">
             {academy.description}
           </p>
           <a
             href={enquiryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-yellow transition hover:text-slate-100"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-yellow transition hover:text-white"
           >
             <MessageCircle size={16} aria-hidden="true" />
-            Enquire Now
+            <span>Enquire Now</span>
             <ExternalLink size={13} aria-hidden="true" />
           </a>
         </div>

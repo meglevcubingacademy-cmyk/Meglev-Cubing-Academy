@@ -170,8 +170,10 @@ export default function ScrollSolvingCube() {
 
     const getScrollProgress = () => {
       if (motionPreference.matches) return 1
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight
+      const footerEl = document.querySelector('footer')
+      const maxScroll = footerEl
+        ? Math.max(1, footerEl.offsetTop - window.innerHeight)
+        : document.documentElement.scrollHeight - window.innerHeight
       return maxScroll > 0
         ? THREE.MathUtils.clamp(window.scrollY / maxScroll, 0, 1)
         : 0

@@ -27,10 +27,11 @@ body {
   color: #f5f7ff;
   font-family: var(--font-sans);
   background-image:
-    radial-gradient(ellipse at 78% 12%, rgba(65, 105, 255, 0.08), transparent 36rem),
-    linear-gradient(rgba(22, 33, 61, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(22, 33, 61, 0.12) 1px, transparent 1px);
+    radial-gradient(ellipse at 78% 12%, rgba(65, 105, 255, 0.12), transparent 36rem),
+    linear-gradient(rgba(38, 51, 84, 0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 51, 84, 0.24) 1px, transparent 1px);
   background-size: 100% 100%, 48px 48px, 48px 48px;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -39,7 +40,7 @@ body {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  opacity: 0.18;
+  opacity: 0.28;
   pointer-events: none;
   animation: cube-background-idle 10s ease-in-out infinite;
 }
@@ -56,13 +57,13 @@ body {
 
 @media (max-width: 700px) {
   .scroll-solving-cube {
-    opacity: 0.08;
+    opacity: 0.16;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .scroll-solving-cube {
-    opacity: 0.06;
+    opacity: 0.1;
     animation: none;
   }
 }
@@ -92,6 +93,27 @@ h1, h2, h3 {
 .glass:hover {
   border-color: rgba(65, 105, 255, 0.72);
   box-shadow: 0 0 25px rgba(65, 105, 255, 0.12);
+}
+
+.site-footer {
+  background-color: #070b18;
+  background-image:
+    radial-gradient(ellipse at 50% 100%, rgba(65, 105, 255, 0.08), transparent 30rem),
+    linear-gradient(rgba(38, 51, 84, 0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 51, 84, 0.24) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.meglev-logo {
+  width: auto;
+  height: var(--meglev-logo-size);
+  max-height: 44px;
+}
+
+@media (max-width: 639px) {
+  .meglev-logo {
+    max-height: 34px;
+  }
 }
 
 .btn {

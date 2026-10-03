@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="200" viewBox="0 0 520 100" fill="none">
+  <g>
+    <path d="m7 28 43 23 43-23v47L50 98 7 75V28Z" fill="#FFFFFF" fill-opacity=".08" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m50 51 43-23v47L50 98V51Zm-43-23 43 23v47L7 75V28Z" fill="#FFFFFF" fill-opacity=".18"/>
+    <path d="M50 51v47M7 75l43 23 43-23m0-47L50 51 7 28" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m8 30 9 4.8v15L28 68l10-6 10 5v27l-9-4.8V78l-11 6-12-21V77l-8-4.3V30Z" fill="#FFFFFF"/>
+    <path d="m52 53 9-4.8v30l29-16v9.5L52 94V53Z" fill="#FFFFFF" fill-opacity=".72"/>
+    <path d="m63 48 28-15v9L63 58v-10Zm0 13 28-15v9L63 71v-10Zm0 13 18-9.7v9L63 83v-9Z" fill="#FFFFFF" fill-opacity=".46"/>
+    <path d="m7 28 22-12 9 5-22 12L7 28Zm22-12L50 4l21 11.5-21 12L29 16Zm24 13 21-12 19 10.5-21 12L53 29ZM29 42l21-12 21 11.5-21 12L29 42Z" fill="#FFFFFF" fill-opacity=".82"/>
+    <path d="m50 4 21 11.5v3L50 7 29 19v-3L50 4Zm-43 24 22-12v3L10 30l7 3.8v3L7 31v-3Zm65 11 21-12v3L72 42v-3Z" fill="#FFFFFF"/>
+  </g>
+  <text x="116" y="57" fill="#FFFFFF" font-family="Sora, Arial, sans-serif" font-size="38" font-weight="800" letter-spacing="1.2">MEGLEV</text>
+  <text x="118" y="82" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.7">CUBING ACADEMY</text>
+</svg>
